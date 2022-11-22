@@ -23,6 +23,6 @@
 ![](https://i.ibb.co/xY74YQz/1.png)
 
 #### Social Media
-**⋄ Github:** ![Eratonos](https://github.com/Eratonos)
+**⋄ Github:** [Eratonos](https://github.com/Eratonos)
 
-**⋄ Instagram:** ![@eratonos](https://instagram/eratonos)
+**⋄ Instagram:** [@eratonos](https://instagram.com/eratonos)
