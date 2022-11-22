@@ -1,6 +1,6 @@
 ![](https://i.ibb.co/qrGjSCb/1.png)
 
-###Kali Linux Installation
+### Kali Linux Installation
                 
 ----
 
@@ -10,14 +10,14 @@
 
 `$ chmod +x bl4ckz3r0.sh`
 
-####Start Tool
+#### Start Tool
 
 `$ sudo bash bl4ckz3r0.sh`
 
 ![](https://i.ibb.co/zPbGtdH/1.png)
                 
 ----
-####Update Tool
+#### Update Tool
 
 `$ chmod +x ./update`
 
