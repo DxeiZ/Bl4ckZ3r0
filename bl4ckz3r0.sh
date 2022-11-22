@@ -59,7 +59,7 @@ header() {
 
 #/# Main Menu #/#
 main() {
-	echo -ne $bred" 1 ⋄$tp$bred aSpamW  $green- Whatsapp Spam\t\t"
+	echo -ne $bred" 1 ⋄$tp$bred SpamW  $green- Whatsapp Spam\t\t"
 	echo -e  $bred" 5 ⋄$tp$bred RequiredZ3r0 $green- Required Linux"
 	echo -ne $bred" 2 ⋄$tp$bred IPScan $green- IPv4 Scanner\t\t"
 	echo -e  $bred" 6 ⋄$tp$bred CamHackers   $green- Web Camera IPs"
