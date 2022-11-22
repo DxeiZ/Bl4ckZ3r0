@@ -59,7 +59,7 @@ header() {
 
 #/# Main Menu #/#
 main() {
-	echo -ne $bred" 1 ⋄$tp$bred SpamW  $green- Whatsapp Spam\t\t"
+	echo -ne $bred" 1 ⋄$tp$bred aSpamW  $green- Whatsapp Spam\t\t"
 	echo -e  $bred" 5 ⋄$tp$bred RequiredZ3r0 $green- Required Linux"
 	echo -ne $bred" 2 ⋄$tp$bred IPScan $green- IPv4 Scanner\t\t"
 	echo -e  $bred" 6 ⋄$tp$bred CamHackers   $green- Web Camera IPs"
@@ -68,9 +68,8 @@ main() {
 	echo -ne $bred" 4 ⋄$tp$bred CiLocks$green- Locks Phone Attack\t"
 	echo -e  $bred" 8 ⋄$tp$bred Psudohash    $green- Password Generator"
 	echo -ne  "\n "
-	echo -ne $bgmag$bwhite"0 ⋄ Update                     "
-	echo -ne $tp"\t "
-	echo -e  $bgred$bwhite"99 ⋄ Exit                          $tp"
+	echo -ne $tp"\t\t\t\t\t "
+	echo -e  $bgred$bwhite"0 ⋄ Exit                          $tp"
 	echo
 	echo -e $bgreen"┌("$bred"bl4ckz3r0@root$bgreen)"
 	echo -ne $bred"└["$blink"⋄$tp$bred] →$tp "; read options
@@ -388,16 +387,7 @@ case "$options" in
  	sudo python3 psudohash.py -w $pword --common-paddings-after
  	cd ..
  	;;
- 	0)
- 		clear
- 		header
- 		echo -ne $tp"Bl4ckZ3r0 updating..."
- 		git fetch origin && git reset --hard origin/master && git clean -f -d &> /dev/null
-		echo -e $bgreen" SUCCESSFUL"
-		echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Come Backing..."
-		sleep 3
-	;;
-	99)
+	0)
 		clear
  		header
 		echo -e $bgreen"["$blink$byellow"⋄$tp$bgreen] Bl4ckZ3r0 thanks for choosing her/him."
