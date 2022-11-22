@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#/# My use colors #/#
+	red='\e[0;31m'
+	bred='\e[1;31m'
+	green='\e[0;32m'
+	bgreen='\e[1;32m'
+	bmag='\e[1;35m'
+	white='\e[0;37m'
+	bwhite='\e[1;37m'
+	byellow='\e[1;33m'
+	yellow='\e[0;33m'
+	bgred='\e[1;41m'
+	bgmag='\e[1;45m'
+	tp='\e[0m'
+	blink='\e[5m'
+	smso='\e[3m'
+	dim='\e[2m'
+
+#/# Detecting Ctrl+C #/#
+trap ctrl_c INT
+ctrl_c() {
+	echo -e "\n"
+	echo -e $bgreen"["$blink$byellow"⋄$tp$bgreen] Bl4ckZ3r0 thanks for choosing her/him."
+	exit 0
+}
+
+#/# Check Super User #/#
+[ $UID != 0 ] && { echo -e $bred"Run as root! sudo bash $0"; exit 1; }
+
+
+#/# Amazing HEADER :) #/#
+header() {
+	clear
+	echo
+	echo -e " $bred ▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀▒███████▒▓█████  ██▀███   ▒█████  "
+	echo -e " $bred▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▒ ▒ ▒ ▄▀░▓█   ▀ ▓██ ▒ ██▒▒██▒  ██▒"
+	echo -e " $bred▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ░ ▒ ▄▀▒░ ▒███   ▓██ ░▄█ ▒▒██░  ██▒"
+	echo -e " $bred▒██░█▀  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄   ▄▀▒   ░▒▓█  ▄ ▒██▀▀█▄  ▒██   ██░"
+	echo -e " $bred░▓█  ▀█▓░██████▒▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄▒███████▒░▒████▒░██▓ ▒██▒░ ████▓▒░"
+	echo -e " $bred░▒▓███▀▒░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░▒▒ ▓░▒░▒░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ "
+	echo -e " $bred▒░▒   ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░░░▒ ▒ ░ ▒ ░ ░  ░  ░▒ ░ ▒░  ░ ▒ ▒░ "
+	echo -e " $bred ░    ░   ░ ░    ░   ▒   ░        ░ ░░ ░ ░ ░ ░ ░ ░   ░     ░░   ░ ░ ░ ░ ▒  "
+	echo -e " $bred ░          ░  ░     ░  ░░ ░      ░  ░     ░ ░       ░  ░   ░         ░ ░  "
+	echo -e " $bred      ░                  ░               ░                                 "
+	echo -e $tp
+	echo -e $blink$bgreen" ┌------------------------------------------------------------------------┐"
+	echo -e " │$tp$byellow   .---------.                                                          $blink$bgreen│"
+	echo -e " │$tp$byellow   |.-------.|  $bmag Developer: Eratonos                                    $blink$bgreen│"
+	echo -e " │$tp$byellow   ||>run#  ||  $bmag Github: https://github.com/Eratonos                    $blink$bgreen│"
+	echo -e " │$tp$byellow   ||       ||  $bmag Version: 1.0                                           $blink$bgreen│"
+	echo -e " │$tp$byellow   |\"-------'|                                                         $blink$bgreen │"
+	echo -e " │$tp$byellow .-^---------^-.                                                       $blink$bgreen │"
+	echo -e " │$tp$byellow | ---~   Bl4ck| $dim$yellow Good Hacking :)$tp                                      $blink$bgreen │"
+	echo -e " │$tp$byellow \"-------------'                                                        $blink$bgreen│" 
+	echo -e $blink$bgreen" └------------------------------------------------------------------------┘"
+	echo -e $tp
+} 
+
+echo -ne $bwhite"Bl4ckZ3r0 updating..."
+git fetch origin && git reset --hard origin/master && git clean -f -d &> /dev/null
+echo -e $bgreen" SUCCESSFUL"
+exit 3
+;;
