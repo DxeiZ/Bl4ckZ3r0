@@ -1,8 +1,5 @@
-![](https://i.ibb.co/qrGjSCb/1.png)
-
 ### Kali Linux Installation
-                
-----
+![](https://i.ibb.co/qrGjSCb/1.png)
 
 `$ git clone https://github.com/Eratonos/Bl4ckZ3r0`
 
