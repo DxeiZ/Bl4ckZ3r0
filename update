@@ -58,7 +58,7 @@ header() {
 } 
 
 echo -ne $bwhite"Bl4ckZ3r0 updating..."
-git fetch origin && git reset --hard origin/master && git clean -f -d &> /dev/null
+git fetch origin && git reset --hard origin/main && git clean -f -d &> /dev/null
 echo -e $bgreen" SUCCESSFUL"
 exit 3
 ;;
