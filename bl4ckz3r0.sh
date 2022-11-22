@@ -11,6 +11,7 @@
 	byellow='\e[1;33m'
 	yellow='\e[0;33m'
 	bgred='\e[1;41m'
+	bgmag='\e[1;45m'
 	tp='\e[0m'
 	blink='\e[5m'
 	smso='\e[3m'
@@ -23,6 +24,9 @@ ctrl_c() {
 	echo -e $bgreen"["$blink$byellow"⋄$tp$bgreen] Bl4ckZ3r0 thanks for choosing her/him."
 	exit 0
 }
+
+#/# Check Super User #/#
+[ $UID != 0 ] && { echo -e $bred"Run as root! sudo bash $0"; exit 1; }
 
 
 #/# Amazing HEADER :) #/#
@@ -56,13 +60,17 @@ header() {
 #/# Main Menu #/#
 main() {
 	echo -ne $bred" 1 ⋄$tp$bred SpamW  $green- Whatsapp Spam\t\t"
-	echo -e  $bred" 4 ⋄$tp$bred RequiredZ3r0 $green- Required Linux"
+	echo -e  $bred" 5 ⋄$tp$bred RequiredZ3r0 $green- Required Linux"
 	echo -ne $bred" 2 ⋄$tp$bred IPScan $green- IPv4 Scanner\t\t"
-	echo -e  $bred" 5 ⋄$tp$bred CamHackers   $green- Web Camera IPs"
+	echo -e  $bred" 6 ⋄$tp$bred CamHackers   $green- Web Camera IPs"
 	echo -ne $bred" 3 ⋄$tp$bred Cupp   $green- Generator Wordlist\t"
-	echo -e  $bred" 6 ⋄$tp$bred InstaSpamV4  $green- Instagram Closed"
-	echo -ne "\n\t\t\t\t\t "
-	echo -e  $bgred$bwhite"⋄ Exit                             $tp"
+	echo -e  $bred" 7 ⋄$tp$bred InstaSpamV4  $green- Instagram Closed\t\t"
+	echo -ne $bred" 4 ⋄$tp$bred CiLocks$green- Locks Phone Attack\t"
+	echo -e  $bred" 8 ⋄$tp$bred Psudohash    $green- Password Generator"
+	echo -ne  "\n "
+	echo -ne $bgmag$bwhite"0 ⋄ Update                     "
+	echo -ne $tp"\t "
+	echo -e  $bgred$bwhite"99 ⋄ Exit                          $tp"
 	echo
 	echo -e $bgreen"┌("$bred"bl4ckz3r0@root$bgreen)"
 	echo -ne $bred"└["$blink"⋄$tp$bred] →$tp "; read options
@@ -215,13 +223,13 @@ case "$options" in
  		else
   			clear
   			header
-  			echo -ne $tp"IPScan Downloading..."
+  			echo -ne $tp"Cupp Downloading..."
   			git clone https://github.com/Mebus/cupp > /dev/null 2>&1
   			echo -e $bgreen" SUCCESSFUL"
   			cd cupp
   			echo -ne $tp"Installing Additional Components..."
   			{
-  				chmod +x cup.py
+  				chmod +x cupp.py
   				apt-get install -y python3
   			} &> /dev/null
   			cd ..
@@ -231,16 +239,62 @@ case "$options" in
  		fi
  		clear
  		cd cupp
- 		sudo python3 cup.py
+ 		sudo python3 cupp.py -i
  		cd ..
  	;;
  	4)
+ 		if [[ -d CiLocks ]]; then
+  			echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
+  			sleep 3
+  			menu
+ 		else
+  			clear
+  			header
+  			echo -ne $tp"CiLocks Downloading..."
+  			git clone https://github.com/tegal1337/CiLocks > /dev/null 2>&1
+  			echo -e $bgreen" SUCCESSFUL"
+  			cd CiLocks
+  			echo -ne $tp"Installing Additional Components..."
+  			{
+  				chmod +x ./cilocks
+  			} &> /dev/null
+  			cd ..
+  			echo -e $bgreen" SUCCESSFUL"
+  			echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
+  			sleep 3
+ 		fi
+ 		clear
+ 		cd CiLocks
+ 		sudo ./cilocks
+ 		cd ..
+ 	;;
+ 	5)
  		clear
  		header
  		echo -ne $tp"RequiredZ3r0 Runnig..."
  		[ $UID != 0 ] && { echo -e $bred"Run as root! sudo bash $0"; exit 1; }
  		apt update
  		apt install -y python3 python3-pip git php nmap tor default-jdk curl openssh openssl wget unzip vi vim nano
+		apt install git -y
+		apt install python3 -y 
+		apt install python3-pip -y 	
+        apt install python -y 
+        apt install nmap -y 
+        apt install torghost -y 
+        apt install tor -y 
+        apt install default-jdk -y 
+		apt install openjdk-9-jdk-headless -y 			
+        apt install php -y 			
+		python3 -m pip install setuptools			
+        pip install mechanize 
+        pip install php			
+        pip install tor			
+        pip install curl			
+        pip install tor			
+        pip install stem					
+        pip3 install requests			
+        pip3 install clint		
+        pip3 install coloramas	
  		echo -e $bgreen" SUCCESSFUL"
  		echo -ne $tp"Installing Additional Components..."
  		apt upgrade -y && apt autoremove -y
@@ -250,7 +304,7 @@ case "$options" in
  		header
  		main
  	;;
-	5)
+	6)
  		if [[ -d Cam-Hackers ]]; then
   			echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
   			sleep 3
@@ -278,7 +332,7 @@ case "$options" in
  		sudo python3 cam-hackers.py
  		cd ..
  	;;
- 	6)
+ 	7)
  		if [[ -d instaspamv4 ]]; then
  	 		echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
   			sleep 3
@@ -305,17 +359,58 @@ case "$options" in
  	sudo python3 instaspamv4.py
  	cd ..
  	;;
-	0)
+ 	8)
+ 		if [[ -d psudohash ]]; then
+ 	 		echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
+  			sleep 3
+ 	 		menu
+ 		else
+  			clear
+			header
+			echo -ne $tp"Psudohash Downloading..."
+			git clone https://github.com/t3l3machus/psudohash > /dev/null 2>&1
+			echo -e $bgreen" SUCCESSFUL"
+			cd psudohash
+			echo -ne $tp"Installing Additional Components..."
+			{
+				chmod +x psudohash.sh
+			} &> /dev/null
+			cd ..
+			echo -e $bgreen" SUCCESSFUL"
+			echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Opening..."
+			sleep 3
+	fi
+ 	clear
+ 	header
+ 	echo -ne $bgreen"["$blink$byellow"⋄$tp$bgreen] Words (bl4ck,z3r0,eratonos): "; read pword
+ 	clear
+ 	cd psudohash
+ 	sudo python3 psudohash.py -w $pword --common-paddings-after
+ 	cd ..
+ 	;;
+ 	0)
+ 		clear
+ 		header
+ 		echo -ne $tp"Bl4ckZ3r0 updating..."
+ 		git fetch origin && git reset --hard origin/master && git clean -f -d &> /dev/null
+		echo -e $bgreen" SUCCESSFUL"
+		echo -e $bgreen"└["$blink$byellow"⋄$tp$bgreen] Come Backing..."
+		sleep 3
+	;;
+	99)
 		clear
  		header
 		echo -e $bgreen"["$blink$byellow"⋄$tp$bgreen] Bl4ckZ3r0 thanks for choosing her/him."
 		exit 0
  	;;
 	*)
-		echo -e $bred"An undefined parameter"
- 		sleep 0.5
- 		clear
- 		header
- 		main
+		while [ 0 ]
+		do
+			echo -e $bred"An undefined parameter"
+ 			sleep 0.5
+ 			clear
+ 			header
+ 			main
+		done
  	;;
 esac
